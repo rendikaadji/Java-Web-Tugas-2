@@ -18,7 +18,7 @@ Membangun `ProductController` berbasis REST API pada project Spring Boot `produc
 ## Struktur Project
 
 ```
-src/main/java/com/budiluhur/catalog
+product-catalog/src/main/java/com/budiluhur/catalog
 ├── ProductCatalogApplication.java
 ├── controller/ProductController.java
 ├── exception/ProductNotFoundException.java
@@ -30,6 +30,7 @@ src/main/java/com/budiluhur/catalog
 ## Cara Menjalankan
 
 ```bash
+cd product-catalog
 ./mvnw spring-boot:run
 ```
 
@@ -54,43 +55,43 @@ Pengujian dilakukan berurutan pada satu kali menjalankan aplikasi. Setiap screen
 
 Hasil: 200 OK, JSON array berisi 2 produk awal.
 
-![GET all](screenshots/01-get-all.png)
+![GET all](product-catalog/screenshots/01-get-all.png)
 
 ### 2. POST tambah produk
 
 Hasil: 201 Created dengan pesan sukses.
 
-![POST create](screenshots/02-post-create.png)
+![POST create](product-catalog/screenshots/02-post-create.png)
 
 ### 3. GET produk berdasarkan ID (sukses)
 
 Hasil: 200 OK dan data produk. Memakai `PRD-04` karena produk ini baru ditambahkan pada langkah 2.
 
-![GET by id](screenshots/03-get-by-id-sukses.png)
+![GET by id](product-catalog/screenshots/03-get-by-id-sukses.png)
 
 ### 4. GET produk berdasarkan ID (tidak ditemukan)
 
 Hasil: 404 Not Found dengan pesan error.
 
-![GET by id 404](screenshots/04-get-by-id-404.png)
+![GET by id 404](product-catalog/screenshots/04-get-by-id-404.png)
 
 ### 5. PUT ubah produk
 
 Hasil: 200 OK dan JSON produk yang sudah diperbarui.
 
-![PUT update](screenshots/05-put-update.png)
+![PUT update](product-catalog/screenshots/05-put-update.png)
 
 ### 6. DELETE hapus produk
 
 Hasil: 200 OK dengan pesan penghapusan.
 
-![DELETE](screenshots/06-delete.png)
+![DELETE](product-catalog/screenshots/06-delete.png)
 
 ### 7. Mini Challenge: pencarian produk
 
 Endpoint `GET /api/products/search?keyword=keyboard` memakai `@RequestParam("keyword")`. Filter di `ProductRepository.searchByName` memakai `product.getName().toLowerCase().contains(keyword.toLowerCase())`, jadi pencarian tidak membedakan huruf besar dan kecil. Produk `PRD-01` sudah berubah menjadi "Keyboard Mechanical RGB" dari langkah 5.
 
-![Search](screenshots/07-search.png)
+![Search](product-catalog/screenshots/07-search.png)
 
 ## Catatan
 
